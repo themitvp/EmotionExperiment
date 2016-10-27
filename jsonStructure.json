@@ -1,0 +1,29 @@
+[
+	{
+		"name": "...",
+		"appearance": {},
+		"images": [
+			{
+				"name": "something.jpg",
+				"trueValence": 1,
+				"inputs": {
+					"0.3": {
+						"emotions": {
+							"anger": 0.2,
+							"joy": 0.8,
+						},
+						"expressions": {}
+					},
+					"1.3": {
+						"emotions": {},
+						"expressions": {}
+					},
+					"2.4": {
+						"emotions": {},
+						"expressions": {}
+					},
+				},
+			},
+		]
+	}
+]
