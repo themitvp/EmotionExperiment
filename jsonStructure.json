@@ -5,7 +5,6 @@
 		"images": [
 			{
 				"name": "something.jpg",
-				"trueValence": 1,
 				"inputs": {
 					"0.3": {
 						"emotions": {
