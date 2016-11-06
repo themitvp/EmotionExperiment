@@ -61,7 +61,7 @@ app.controller('startController', function( $scope, $rootScope, $http, $location
 		$scope.currentValence = null;
 		$scope.currentArousal = null;
 
-		if ($scope.currentImageIndex < $scope.images.length - 4) {
+		if ($scope.currentImageIndex < $scope.images.length - 1) {
 			$scope.currentImageIndex += 1;
 			$scope.currentImage = $scope.images[$scope.currentImageIndex];
 			$location.path('/start/' + $scope.currentImageIndex);
