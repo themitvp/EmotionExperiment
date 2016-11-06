@@ -1,0 +1,19 @@
+{
+  "name": "emotion-experiment",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.13.4",
+    "method-override": "^2.3.6",
+    "mongodb": "^2.2.11",
+    "mongoose": "^4.6.6"
+  }
+}

@@ -1,0 +1,5 @@
+Image	Valence	Arousal
+A001.bmp	2.553	74.995
+A019.bmp	31.632	37.720
+A041.bmp	1.354	83.041
+A060.bmp	31.445	58.323

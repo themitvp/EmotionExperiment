@@ -1,0 +1,18 @@
+<div class="container">
+	<div class="row">
+		<div id="WelcomePage" class="col-md-12 text-center">
+			<h1>Welcome</h1>
+			<div class="alert alert-warning">
+				<h4>Purpose and warning text</h4>
+				<p>Some disclaimer text</p>
+			</div>
+			<h4>If you agree with the disclaimer, please press the button below:</h4>
+			<button ng-click="startAffdex()" class="btn btn-success" style="margin-bottom: 15px;">I Accept <span class="glyphicon glyphicon-ok"></span></button>
+			<div class="row">
+				<div class="col-md-4 col-md-offset-4" ng-if="progressStatus">
+					<uib-progressbar value="progressStatus" type="success"><b>{{progressStatus}}%</b></uib-progressbar>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,100 @@
+html * {
+    font-family: 'Lato';
+}
+
+html, body {
+    height: 100%;
+}
+
+h1 {
+    padding-top: 40px;
+}
+
+.sam-container {
+    margin: 20px 0;
+}
+
+.sam-container img {
+    width: 90px;
+    margin-left: -10px;
+}
+
+.sam-container label {
+    width: 70px;
+}
+
+.sam-container label:last-child {
+    padding-right: 0;
+}
+
+.img-full-height {
+    background-position: top;
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
+
+/* ANIMATIONS for left and right
+============================================================================= */
+.view-animate-container {
+    position: relative;
+    height: auto; 
+}
+
+.view-animate.ng-enter, .view-animate.ng-leave {
+    -webkit-transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.3s;
+    transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.3s;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0; 
+}
+
+.right .view-animate.ng-enter {
+    -webkit-transform: translate3d(150%, 0, 0);
+    -moz-transform: translate3d(150%, 0, 0);
+    -ms-transform: translate3d(150%, 0, 0);
+    -o-transform: translate3d(150%, 0, 0);
+    transform: translate3d(150%, 0, 0); 
+}
+
+.right .view-animate.ng-enter.ng-enter-active {
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    -o-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+}
+
+.right .view-animate.ng-leave.ng-leave-active {
+    -webkit-transform: translate3d(-150%, 0, 0);
+    -moz-transform: translate3d(-150%, 0, 0);
+    -ms-transform: translate3d(-150%, 0, 0);
+    -o-transform: translate3d(-150%, 0, 0);
+    transform: translate3d(-150%, 0, 0); 
+}
+
+.left .view-animate.ng-enter {
+    -webkit-transform: translate3d(-150%, 0, 0);
+    -moz-transform: translate3d(-150%, 0, 0);
+    -ms-transform: translate3d(-150%, 0, 0);
+    -o-transform: translate3d(-150%, 0, 0);
+    transform: translate3d(-150%, 0, 0); 
+}
+
+.left .view-animate.ng-enter.ng-enter-active {
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    -o-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0); 
+}
+
+.left .view-animate.ng-leave.ng-leave-active {
+    -webkit-transform: translate3d(150%, 0, 0);
+    -moz-transform: translate3d(150%, 0, 0);
+    -ms-transform: translate3d(150%, 0, 0);
+    -o-transform: translate3d(150%, 0, 0);
+    transform: translate3d(150%, 0, 0); 
+}
