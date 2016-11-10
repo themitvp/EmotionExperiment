@@ -20,7 +20,7 @@ app.controller('startController', function( $scope, $rootScope, $http, $location
 		addNewImageTracking();
 		
 
-		$scope.showNoise($scope.currentImage.Time);
+		
 	});
 
 	$rootScope.detector.addEventListener("onImageResultsSuccess", function(faces, image, timestamp) {
@@ -43,17 +43,17 @@ app.controller('startController', function( $scope, $rootScope, $http, $location
 		};
 	}
 
-	$scope.showNoise = function(time) {
-
-	$rootScope.$on('lazyImg:success', function(event, data) {  
-		console.log("ready")
+	$scope.imageHasLoaded = function() {
 		recordFace = true;
-			$timeout(function () {
-				recordFace = false;
-				$location.path('/start/' + $scope.currentImageIndex + '/noise');
-				$scope.showSAM(maskeDuration);
-			}, time);
-		});
+		$scope.showNoise($scope.currentImage.Time);
+	};
+
+	$scope.showNoise = function(time) {	
+		$timeout(function () {
+			recordFace = false;
+			$location.path('/start/' + $scope.currentImageIndex + '/noise');
+			$scope.showSAM(maskeDuration);
+		}, time);
 	}
 
 	$scope.showSAM = function(time) {
@@ -68,7 +68,7 @@ app.controller('startController', function( $scope, $rootScope, $http, $location
 		$scope.currentFace.samArousal = $scope.currentArousal;
 
 		storeJsonService.setImageUserData($scope.currentFace).then(function() {
-			console.log("it is send");
+			
 		});
 
 		$scope.currentValence = null;
@@ -78,9 +78,9 @@ app.controller('startController', function( $scope, $rootScope, $http, $location
 			$scope.currentImageIndex += 1;
 			$scope.currentImage = $scope.images[$scope.currentImageIndex];
 			$location.path('/start/' + $scope.currentImageIndex);
-			recordFace = true;
+			//recordFace = true;
 			addNewImageTracking();
-			$scope.showNoise($scope.currentImage.Time);
+			//$scope.showNoise($scope.currentImage.Time);
 		} else {
 			$window.location.href = '/welcome';
 		}

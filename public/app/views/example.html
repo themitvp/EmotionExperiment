@@ -1,113 +1,115 @@
-<div class="container">
+<div class="container-fluid">
 	<div class="row">
 		<div class="col-md-12 text-center">
 			<!-- Image -->
 			<div class="col-sm-12 view-animate" ng-if="hideImage == 1">
-				<div class="img-full-height center-block" lazy-img="/assets/img/happy-cat.jpg"></div>
+				<img class="img-full-height" src="/assets/img/happy-cat.jpg">
 				<button ng-click="showSAM()" class="btn btn-primary btn-for-example">Next</button>
 			</div>
 
 			<div class="col-sm-12 view-animate" ng-if="hideImage == 2">
-				<div class="img-full-height center-block" style="background-image: url('/assets/img/noise.png');"></div>
+				<img class="img-full-height" src="/assets/img/noise.png">
 				<button ng-click="showSAM()" class="btn btn-primary btn-for-example">Next</button>
 			</div>
 
 			<!-- SAM -->
-			<div class="col-sm-12 view-animate" ng-if="hideImage == 3">
-				<h1>Rating</h1>
-				<p>Please rate your reaction in the form below</p>
-				<form name="emotionForm">
-					<div class="panel panel-default">
-						<div class="panel-heading">
-							<h3 class="panel-title">How did the image make you feel? (E.g. the cat made me very happy)</h3>
-						</div>
-						<div class="panel-body">
-							<div class="sam-container">
-								<label>
-									<img src="assets/img/verysad.png">
-									<input required ng-model="currentValence" class="checkbox-inline" type="radio" name="valence" value="1"/>
-									<span>Negative</span>
-								</label>
-								<label>
-									<input required ng-model="currentValence" class="checkbox-inline" type="radio" name="valence" value="2"/>
-								</label>
-								<label>
-									<img src="assets/img/sad.png">
-									<input required ng-model="currentValence" class="checkbox-inline" type="radio" name="valence" value="3"/>
-								</label>
-								<label>
-									<input required ng-model="currentValence" class="checkbox-inline" type="radio" name="valence" value="4"/>
-								</label>
-								<label>
-									<img src="assets/img/neutral.png">
-									<input required ng-model="currentValence" class="checkbox-inline" type="radio" name="valence" value="5"/>
-									<span>Neutral</span>
-								</label>
-								<label>
-									<input required ng-model="currentValence" class="checkbox-inline" type="radio" name="valence" value="6"/>
-								</label>
-								<label>
-									<img src="assets/img/smile.png">
-									<input required ng-model="currentValence" class="checkbox-inline" type="radio" name="valence" value="7"/>
-								</label>
-								<label>
-									<input required ng-model="currentValence" class="checkbox-inline" type="radio" name="valence" value="8"/>
-								</label>
-								<label>
-									<img src="assets/img/veryhappy.png">
-									<input required ng-model="currentValence" class="checkbox-inline" type="radio" name="valence" value="9"/>
-									<span>Positive</span>
-								</label>
+			<div class="container view-animate" ng-if="hideImage == 3">
+				<div class="col-sm-12">
+					<h1>Rating</h1>
+					<p>Please rate your reaction in the form below</p>
+					<form name="emotionForm">
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h3 class="panel-title">How did the image make you feel? (E.g. the cat made me very happy)</h3>
+							</div>
+							<div class="panel-body">
+								<div class="sam-container">
+									<label>
+										<img src="assets/img/verysad.png">
+										<input required ng-model="currentValence" class="checkbox-inline" type="radio" name="valence" value="1"/>
+										<span>Negative</span>
+									</label>
+									<label>
+										<input required ng-model="currentValence" class="checkbox-inline" type="radio" name="valence" value="2"/>
+									</label>
+									<label>
+										<img src="assets/img/sad.png">
+										<input required ng-model="currentValence" class="checkbox-inline" type="radio" name="valence" value="3"/>
+									</label>
+									<label>
+										<input required ng-model="currentValence" class="checkbox-inline" type="radio" name="valence" value="4"/>
+									</label>
+									<label>
+										<img src="assets/img/neutral.png">
+										<input required ng-model="currentValence" class="checkbox-inline" type="radio" name="valence" value="5"/>
+										<span>Neutral</span>
+									</label>
+									<label>
+										<input required ng-model="currentValence" class="checkbox-inline" type="radio" name="valence" value="6"/>
+									</label>
+									<label>
+										<img src="assets/img/smile.png">
+										<input required ng-model="currentValence" class="checkbox-inline" type="radio" name="valence" value="7"/>
+									</label>
+									<label>
+										<input required ng-model="currentValence" class="checkbox-inline" type="radio" name="valence" value="8"/>
+									</label>
+									<label>
+										<img src="assets/img/veryhappy.png">
+										<input required ng-model="currentValence" class="checkbox-inline" type="radio" name="valence" value="9"/>
+										<span>Positive</span>
+									</label>
+								</div>
 							</div>
 						</div>
-					</div>
 
-					<div class="panel panel-default">
-						<div class="panel-heading">
-							<h3 class="panel-title">How strong was the emotional reaction this picture caused in you? 
-							<br>(E.g. "it made no impression on me" = Not at all,
-							<br>or "it made me laugh a lot, or it almost made me want to cry" = A lot)
-							</h3>
-						</div>
-						<div class="panel-body">
-							<div class="sam-container">
-								<label>
-									<img src="assets/img/neutral.png">
-									<input required ng-model="currentArousal" class="checkbox-inline" type="radio" name="arousal" value="1"/>
-									<span>Not at all</span>
-								</label>
-								<label>
-									<input required ng-model="currentArousal" class="checkbox-inline" type="radio" name="arousal" value="2"/>
-								</label>
-								<label>
-									<input required ng-model="currentArousal" class="checkbox-inline" type="radio" name="arousal" value="3"/>
-								</label>
-								<label>
-									<input required ng-model="currentArousal" class="checkbox-inline" type="radio" name="arousal" value="4"/>
-								</label>
-								<label>
-									<input required ng-model="currentArousal" class="checkbox-inline" type="radio" name="arousal" value="5"/>
-								</label>
-								<label>
-									<input required ng-model="currentArousal" class="checkbox-inline" type="radio" name="arousal" value="6"/>
-								</label>
-								<label>
-									<input required ng-model="currentArousal" class="checkbox-inline" type="radio" name="arousal" value="7"/>
-								</label>
-								<label>
-									<input required ng-model="currentArousal" class="checkbox-inline" type="radio" name="arousal" value="8"/>
-								</label>
-								<label>
-									<img src="assets/img/veryaroused.png">
-									<input required ng-model="currentArousal" class="checkbox-inline" type="radio" name="arousal" value="9"/>
-									<span>A lot</span>
-								</label>
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h3 class="panel-title">How strong was the emotional reaction this picture caused in you? 
+									<br>(E.g. "it made no impression on me" = Not at all,
+									<br>or "it made me laugh a lot, or it almost made me want to cry" = A lot)
+								</h3>
+							</div>
+							<div class="panel-body">
+								<div class="sam-container">
+									<label>
+										<img src="assets/img/neutral.png">
+										<input required ng-model="currentArousal" class="checkbox-inline" type="radio" name="arousal" value="1"/>
+										<span>Not at all</span>
+									</label>
+									<label>
+										<input required ng-model="currentArousal" class="checkbox-inline" type="radio" name="arousal" value="2"/>
+									</label>
+									<label>
+										<input required ng-model="currentArousal" class="checkbox-inline" type="radio" name="arousal" value="3"/>
+									</label>
+									<label>
+										<input required ng-model="currentArousal" class="checkbox-inline" type="radio" name="arousal" value="4"/>
+									</label>
+									<label>
+										<input required ng-model="currentArousal" class="checkbox-inline" type="radio" name="arousal" value="5"/>
+									</label>
+									<label>
+										<input required ng-model="currentArousal" class="checkbox-inline" type="radio" name="arousal" value="6"/>
+									</label>
+									<label>
+										<input required ng-model="currentArousal" class="checkbox-inline" type="radio" name="arousal" value="7"/>
+									</label>
+									<label>
+										<input required ng-model="currentArousal" class="checkbox-inline" type="radio" name="arousal" value="8"/>
+									</label>
+									<label>
+										<img src="assets/img/veryaroused.png">
+										<input required ng-model="currentArousal" class="checkbox-inline" type="radio" name="arousal" value="9"/>
+										<span>A lot</span>
+									</label>
+								</div>
 							</div>
 						</div>
-					</div>
 
-					<button ng-click="nextStep()" class="btn btn-primary" ng-disabled="emotionForm.$invalid">Next Image</button>
-				</form>
+						<button ng-click="nextStep()" class="btn btn-primary" ng-disabled="emotionForm.$invalid">Next Image</button>
+					</form>
+				</div>
 			</div>
 		</div>
 	</div>
