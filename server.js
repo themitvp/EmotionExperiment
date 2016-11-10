@@ -49,7 +49,6 @@ var Participant = mongoose.model('Participant', {
 				disgust: Number,
 				engagement: Number,
 				fear: Number,
-				joy: Number,
 				sadness: Number,
 				surprise: Number,
 				valence: Number,
@@ -73,18 +72,34 @@ function getAll(res) {
 };
 
 app.post('/api/newUser', function (req, res) {
-	Participant.create({
-            name: req.body.participantId,
-            appearance: req.body.appearance,
-            images: []
-        }, function (err, participant) {
-            if (err)
-                res.send(err);
 
-            getAll(res);
-        });
+	var previosParticipantId = 0;
+	Participant.findOne().sort('-name').select('name').exec(function (err, participant) {
+		if (err)
+			res.send(err);
+		console.log("participant: " + participant);
+		if (!participant) {
+		} else {
+			previosParticipantId = participant.name;
+			console.log("id: " + previosParticipantId);
+		}
 
-    })
+		console.log("prev id: " + previosParticipantId);
+		var newId = previosParticipantId+1;
+		console.log("new id: " + newId);
+		Participant.create({
+	            name: newId,
+	            appearance: req.body.appearance,
+	            images: []
+	        }, function (innerErr, participant) {
+	            if (innerErr)
+	                res.send(innerErr);
+
+	            res.json(participant);
+	        });
+	    });
+	});
+	
 
 // POST method route
 app.post('/api/saveNewImage', function (req, res) {

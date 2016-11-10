@@ -11,6 +11,7 @@
                     <label>
                         <img src="assets/img/verysad.png">
                         <input required ng-model="$parent.currentValence" class="checkbox-inline" type="radio" name="valence" value="1"/>
+                        <span>Negative</span>
                     </label>
                     <label>
                         <input required ng-model="$parent.currentValence" class="checkbox-inline" type="radio" name="valence" value="2"/>
@@ -25,6 +26,7 @@
                     <label>
                         <img src="assets/img/neutral.png">
                         <input required ng-model="$parent.currentValence" class="checkbox-inline" type="radio" name="valence" value="5"/>
+                        <span>Neutral</span>
                     </label>
                     <label>
                         <input required ng-model="$parent.currentValence" class="checkbox-inline" type="radio" name="valence" value="6"/>
@@ -39,6 +41,7 @@
                     <label>
                         <img src="assets/img/veryhappy.png">
                         <input required ng-model="$parent.currentValence" class="checkbox-inline" type="radio" name="valence" value="9"/>
+                        <span>Positive</span>
                     </label>
                 </div>
             </div>
@@ -46,13 +49,14 @@
 
         <div class="panel panel-default">
             <div class="panel-heading">
-                <h3 class="panel-title">How much did it affect you?</h3>
+                <h3 class="panel-title">How strong was the emotional reaction this picture caused in you?</h3>
             </div>
             <div class="panel-body">
                 <div class="sam-container">
                     <label>
                         <img src="assets/img/neutral.png">
                         <input required ng-model="$parent.currentArousal" class="checkbox-inline" type="radio" name="arousal" value="1"/>
+                        <span>Not at all</span>
                     </label>
                     <label>
                         <input required ng-model="$parent.currentArousal" class="checkbox-inline" type="radio" name="arousal" value="2"/>
@@ -78,6 +82,7 @@
                     <label>
                         <img src="assets/img/veryaroused.png">
                         <input required ng-model="$parent.currentArousal" class="checkbox-inline" type="radio" name="arousal" value="9"/>
+                        <span>A lot</span>
                     </label>
                 </div>
             </div>

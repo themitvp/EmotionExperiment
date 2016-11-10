@@ -2,14 +2,12 @@ app.service('storeJsonService', ['$http',
     function ($http) {
         
         this.setNewUser = function(appearance) {
-            var participant = null;
-			var participantId = localStorage.getItem('emotionExperiment.participantId');
-			
-			participantId = participantId === null ? 0 : parseInt(participantId)+1;
+        	return $http.post("/api/newUser", { appearance: appearance }).then(function(response) {
+				
+				var participantId = response.data.name;
 
-			localStorage.setItem('emotionExperiment.participantId', participantId);
-
-			return $http.post("/api/newUser", { participantId: participantId, appearance: appearance });
+				localStorage.setItem('emotionExperiment.participantId', participantId);
+        	});
         };
 
         this.setImageUserData = function(data) {

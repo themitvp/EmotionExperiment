@@ -1,6 +1,6 @@
 app.service('imagesService', ['$http',
     function ($http) {
-        var url = 'assets/img/GAPED/images.txt';
+        var url = 'assets/img/GAPED/1_selected.txt';
         this.images;
         this.data;
 

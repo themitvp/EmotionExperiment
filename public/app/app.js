@@ -35,8 +35,10 @@ app.config(function ($routeSegmentProvider, $locationProvider, $routeProvider) {
 
     .when('/', 'welcome')
     .when('/ready', 'ready')
+    .when('/example', 'example')
     .when('/start', 'start')
     .when('/start/:imageId', 'start.image')
+    .when('/start/:imageId/noise', 'start.noise')
     .when('/start/:imageId/sam', 'start.sam')
     .otherwise('/')
 
@@ -49,6 +51,11 @@ app.config(function ($routeSegmentProvider, $locationProvider, $routeProvider) {
     .segment('ready', {
         templateUrl: 'app/views/ready.html?1',
         controller: 'readyController'
+    })
+
+    .segment('example', {
+        templateUrl: 'app/views/example.html?1',
+        controller: 'exampleController'
     })
 
     .segment('start', {
@@ -64,27 +71,16 @@ app.config(function ($routeSegmentProvider, $locationProvider, $routeProvider) {
         resolve: resolve
     })
 
+    .segment('noise', {
+        templateUrl: 'app/views/noise.html?1'
+    })
+
     .segment('sam', {
         templateUrl: 'app/views/sam.html?1'
     });
 });
 
-app.run(function ($rootScope, $window, $location, $timeout, storeJsonService) {
-    // publish current transition direction on rootScope
-    $rootScope.direction = 'left';
-    // listen change start events
-    $rootScope.$on('$routeChangeStart', function (event, next, current) {
-        $rootScope.direction = 'right';
-        // console.log(arguments);
-        if (current && next && (current.depth > next.depth)) {
-            $rootScope.direction = 'left';
-        }
-        // back
-        $rootScope.back = function () {
-            $window.history.back();
-        };
-    });
-
+app.run(function ($rootScope, $location, $timeout) {
     var divRoot = $("#affdex_elements")[0];
     var width = 640;
     var height = 480;
@@ -174,11 +170,4 @@ app.run(function ($rootScope, $window, $location, $timeout, storeJsonService) {
             $rootScope.progressStatus = value;
         });
     };
-
-    function download(name, type) {
-        var a = document.getElementById("a");
-        var file = new Blob([jsonfiletoSave], {type: type});
-        a.href = URL.createObjectURL(file);
-        a.download = name;
-    }
 });

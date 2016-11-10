@@ -7,9 +7,10 @@ app.controller('startController', function( $scope, $rootScope, $http, $location
 	$scope.currentValence = null;
 	$scope.currentArousal = null;
 	$scope.currentFace = {};
+
+	var maskeDuration = 500; // How long the mask is shown
 	
 	var recordFace = false;
-	var timeUntilNext = 5000; // 1000 = 1 sek
 	
 	imagesService.getImages().then(function() {
 		$scope.images = csvJSON(imagesService.images);
@@ -19,7 +20,7 @@ app.controller('startController', function( $scope, $rootScope, $http, $location
 		addNewImageTracking();
 		recordFace = true;
 
-		$scope.showSAM(timeUntilNext);
+		$scope.showNoise($scope.currentImage.Time);
 	});
 
 	$rootScope.detector.addEventListener("onImageResultsSuccess", function(faces, image, timestamp) {
@@ -42,9 +43,16 @@ app.controller('startController', function( $scope, $rootScope, $http, $location
 		};
 	}
 
-	$scope.showSAM = function(time) {
+	$scope.showNoise = function(time) {
 		$timeout(function () {
 			recordFace = false;
+			$location.path('/start/' + $scope.currentImageIndex + '/noise');
+			$scope.showSAM(maskeDuration);
+		}, time);
+	}
+
+	$scope.showSAM = function(time) {
+		$timeout(function () {
 			$location.path('/start/' + $scope.currentImageIndex + '/sam');
 		}, time);
 	}
@@ -67,7 +75,7 @@ app.controller('startController', function( $scope, $rootScope, $http, $location
 			$location.path('/start/' + $scope.currentImageIndex);
 			recordFace = true;
 			addNewImageTracking();
-			$scope.showSAM(timeUntilNext);
+			$scope.showNoise($scope.currentImage.Time);
 		} else {
 			$window.location.href = '/welcome';
 		}
