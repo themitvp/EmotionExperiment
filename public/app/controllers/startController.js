@@ -16,11 +16,7 @@ app.controller('startController', function( $scope, $rootScope, $http, $location
 		$scope.images = csvJSON(imagesService.images);
 		$scope.currentImage = $scope.images[0];
 		$location.path('/start/' + $scope.currentImageIndex);
-
 		addNewImageTracking();
-		
-
-		
 	});
 
 	$rootScope.detector.addEventListener("onImageResultsSuccess", function(faces, image, timestamp) {
@@ -48,11 +44,6 @@ app.controller('startController', function( $scope, $rootScope, $http, $location
 		$scope.showNoise($scope.currentImage.Time);
 	});
 
-	$scope.imageHasLoaded = function() {
-		recordFace = true;
-		$scope.showNoise($scope.currentImage.Time);
-	};
-
 	$scope.showNoise = function(time) {	
 		$timeout(function () {
 			recordFace = false;
@@ -73,7 +64,7 @@ app.controller('startController', function( $scope, $rootScope, $http, $location
 		$scope.currentFace.samArousal = $scope.currentArousal;
 
 		storeJsonService.setImageUserData($scope.currentFace).then(function() {
-			
+			//data is send
 		});
 
 		$scope.currentValence = null;
@@ -83,9 +74,7 @@ app.controller('startController', function( $scope, $rootScope, $http, $location
 			$scope.currentImageIndex += 1;
 			$scope.currentImage = $scope.images[$scope.currentImageIndex];
 			$location.path('/start/' + $scope.currentImageIndex);
-			//recordFace = true;
 			addNewImageTracking();
-			//$scope.showNoise($scope.currentImage.Time);
 		} else {
 			$window.location.href = '/welcome';
 		}
