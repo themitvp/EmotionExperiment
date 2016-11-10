@@ -37,16 +37,17 @@ app.controller('startController', function( $scope, $rootScope, $http, $location
 			trueArousal: $scope.currentImage.Arousal,
 			inputs: []
 		};
+		recordFace = true;
 	}
 
 	$rootScope.$on('lazyImg:success', function(event, data) {  
-		recordFace = true;
+		//recordFace = true;
 		$scope.showNoise($scope.currentImage.Time);
 	});
 
 	$scope.showNoise = function(time) {	
 		$timeout(function () {
-			recordFace = false;
+			//recordFace = false;
 			$location.path('/start/' + $scope.currentImageIndex + '/noise');
 			$scope.showSAM(maskeDuration);
 		}, time);
