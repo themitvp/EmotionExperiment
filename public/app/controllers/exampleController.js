@@ -1,4 +1,4 @@
-app.controller('exampleController', function( $scope, $routeSegment, Page, $location) {
+app.controller('exampleController', function( $scope, $rootScope, $routeSegment, Page, $location) {
 	$scope.Page = Page;
 	$scope.$routeSegment = $routeSegment;
 

@@ -18,7 +18,7 @@ app.controller('startController', function( $scope, $rootScope, $http, $location
 		$location.path('/start/' + $scope.currentImageIndex);
 
 		addNewImageTracking();
-		recordFace = true;
+		
 
 		$scope.showNoise($scope.currentImage.Time);
 	});
@@ -44,11 +44,16 @@ app.controller('startController', function( $scope, $rootScope, $http, $location
 	}
 
 	$scope.showNoise = function(time) {
-		$timeout(function () {
-			recordFace = false;
-			$location.path('/start/' + $scope.currentImageIndex + '/noise');
-			$scope.showSAM(maskeDuration);
-		}, time);
+
+	$rootScope.$on('lazyImg:success', function(event, data) {  
+		console.log("ready")
+		recordFace = true;
+			$timeout(function () {
+				recordFace = false;
+				$location.path('/start/' + $scope.currentImageIndex + '/noise');
+				$scope.showSAM(maskeDuration);
+			}, time);
+		});
 	}
 
 	$scope.showSAM = function(time) {

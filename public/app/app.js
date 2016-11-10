@@ -1,4 +1,4 @@
-var app = angular.module('emotionApp', ['ngRoute', 'route-segment', 'view-segment', 'ngAnimate', 'ngSanitize', 'ngResource', 'angular-loading-bar', 'ui.bootstrap', 'ui.bootstrap-slider']);
+var app = angular.module('emotionApp', ['ngRoute', 'route-segment', 'view-segment', 'ngAnimate', 'ngSanitize', 'ngResource', 'angular-loading-bar', 'ui.bootstrap', 'angularLazyImg']);
 
 var resolve = {
     delay: function ($q, $timeout) {
