@@ -43,6 +43,11 @@ app.controller('startController', function( $scope, $rootScope, $http, $location
 		};
 	}
 
+	$rootScope.$on('lazyImg:success', function(event, data) {  
+		recordFace = true;
+		$scope.showNoise($scope.currentImage.Time);
+	});
+
 	$scope.imageHasLoaded = function() {
 		recordFace = true;
 		$scope.showNoise($scope.currentImage.Time);
