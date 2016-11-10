@@ -76,6 +76,7 @@ app.controller('startController', function( $scope, $rootScope, $http, $location
 			$location.path('/start/' + $scope.currentImageIndex);
 			addNewImageTracking();
 		} else {
+			alert("Thank you for your participation :) \nHave a great day");
 			$window.location.href = '/welcome';
 		}
 	};
