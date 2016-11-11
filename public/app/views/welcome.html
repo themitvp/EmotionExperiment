@@ -2,11 +2,21 @@
 	<div class="row">
 		<div id="WelcomePage" class="col-md-12 text-center">
 			<h1>Welcome</h1>
-			<div class="alert alert-warning">
-				<h4>Purpose and warning text</h4>
-				<p>Some disclaimer text</p>
+			<p>Please read the text below:</p>
+			<div class="row">
+				<div class="well col-sm-8 col-sm-push-2">
+					<h4><strong>Warning</strong></h4>
+					<p>The images shown in this experiment are of strong graphic nature, which might affect you negatively. <br>You are free to withdraw from the experiment at any time.
+					</p>
+					<h4><strong>Disclaimer</strong></h4>
+					<p>The aim of this experiment is to capture emotions while viewing a series of images, the experiment is created as part of a project for the course 02458 - Cognitive Modelling at DTU. 
+						<br>This experiment does not evaluates you as its user or an individual.  
+						<br>Your participation in this experiment is entirely voluntary and you are free to withdraw at any given time. <br>Your participation is anonymous, and no information related to you will be released without your consent. 
+						<br>The webcam is activated during the experiment for analytical purposes, but no pictures or personal data are stored that can be linked to you.
+					</p>
+				</div>
 			</div>
-			<h4>If you agree with the disclaimer, please press the button below:</h4>
+			<h4>If you agree with the above statement, please press the button below:</h4>
 			<button ng-click="startAffdex()" class="btn btn-success" style="margin-bottom: 15px;">I Accept <span class="glyphicon glyphicon-ok"></span></button>
 			<div class="row">
 				<div class="col-md-4 col-md-offset-4" ng-if="progressStatus">
