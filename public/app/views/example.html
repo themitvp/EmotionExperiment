@@ -2,18 +2,18 @@
 	<div class="row">
 		<div class="col-md-12 text-center">
 			<!-- Image -->
-			<div class="col-sm-12 view-animate" ng-if="hideImage == 1">
+			<div class="col-sm-12" ng-if="hideImage == 1">
 				<img class="img-full-height" src="/assets/img/happy-cat.jpg">
 				<button ng-click="showSAM()" class="btn btn-primary btn-for-example">Next</button>
 			</div>
 
-			<div class="col-sm-12 view-animate" ng-if="hideImage == 2">
+			<div class="col-sm-12" ng-if="hideImage == 2">
 				<img class="img-full-height" src="/assets/img/noise.png">
 				<button ng-click="showSAM()" class="btn btn-primary btn-for-example">Next</button>
 			</div>
 
 			<!-- SAM -->
-			<div class="container view-animate" ng-if="hideImage == 3">
+			<div class="container" ng-if="hideImage == 3">
 				<div class="col-sm-12">
 					<h1>Rating</h1>
 					<p>Please rate your reaction in the form below</p>
