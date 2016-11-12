@@ -18,9 +18,9 @@ mongoose.connect(url);
 app.use(express.static('./public')); 
 //app.use(bodyParser.json()); // parse application/json
 //app.use(bodyParser.json({type: 'application/vnd.api+json'})); // parse application/vnd.api+json as json
-app.use(methodOverride('X-HTTP-Method-Override')); // override with the X-HTTP-Method-Override header in the request
 app.use(bodyParser.json({limit: '50mb'}));
 app.use(bodyParser.urlencoded({limit: '50mb', 'extended': 'true'}));
+app.use(methodOverride('X-HTTP-Method-Override')); // override with the X-HTTP-Method-Override header in the request
 
 
 // routes ======================================================================
@@ -55,6 +55,30 @@ var Participant = mongoose.model('Participant', {
 			}
 		}
 		]
+	}
+	]
+});
+var Images = mongoose.model('Images', {
+	name: Number,
+	imageName: String,
+	trueValence: Number,
+	trueArousal: Number,
+	samValence: Number,
+	samArousal: Number,
+	inputs: [
+	{
+		timestamp: Number,
+		emotions: {
+			joy: Number,
+			anger: Number,
+			contempt: Number,
+			disgust: Number,
+			engagement: Number,
+			fear: Number,
+			sadness: Number,
+			surprise: Number,
+			valence: Number,
+		}
 	}
 	]
 });
@@ -103,20 +127,17 @@ app.post('/api/newUser', function (req, res) {
 
 // POST method route
 app.post('/api/saveNewImage', function (req, res) {
-	Participant.findOne({ name: req.body.participantId }, function(err, doc) {
+	Images.create({ 
+		participantId: req.body.participantId,
+		imageName: req.body.imageName,
+    	trueValence: req.body.trueValence,
+    	trueArousal: req.body.trueArousal,
+    	samValence: req.body.samValence,
+    	samArousal: req.body.samArousal,
+		inputs: req.body.inputs
+	}, function(err, doc) {
 		if (err)
 			res.send(err);
-
-		doc.images.push({
-	    	imageName: req.body.imageName,
-	    	trueValence: req.body.trueValence,
-	    	trueArousal: req.body.trueArousal,
-	    	samValence: req.body.samValence,
-	    	samArousal: req.body.samArousal,
-			inputs: req.body.inputs
-	    });
-
-	    doc.save();
 
 	    res.sendStatus(200);
 	    //getAll(res);
