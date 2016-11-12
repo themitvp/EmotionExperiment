@@ -37,11 +37,11 @@ app.controller('startController', function( $scope, $rootScope, $http, $location
 			trueArousal: $scope.currentImage.Arousal,
 			inputs: []
 		};
-		recordFace = true;
+		recordFace = false;
 	}
 
 	$rootScope.$on('lazyImg:success', function(event, data) {  
-		//recordFace = true;
+		recordFace = true;
 		$scope.showNoise($scope.currentImage.Time);
 	});
 
