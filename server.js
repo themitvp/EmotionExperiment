@@ -59,7 +59,7 @@ var Participant = mongoose.model('Participant', {
 	]
 });
 var Images = mongoose.model('Images', {
-	name: Number,
+	participantId: Number,
 	imageName: String,
 	trueValence: Number,
 	trueArousal: Number,
