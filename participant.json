@@ -1,0 +1,6 @@
+{"_id":{"$oid":"5827500a22888529d7368495"},"name":1,"images":[],"appearance":{"gender":"Female","glasses":"Yes","age":"55 - 64","ethnicity":"Caucasian"},"__v":0}
+{"_id":{"$oid":"5827579424ff1429e5e01b92"},"name":2,"images":[],"appearance":{"gender":"Male","glasses":"No","age":"55 - 64","ethnicity":"Caucasian"},"__v":0}
+{"_id":{"$oid":"582d729348f1f32a58411722"},"name":3,"images":[],"appearance":{"gender":"Female","glasses":"No","age":"25 - 34","ethnicity":"Hispanic"},"__v":0}
+{"_id":{"$oid":"582d761148f1f32a58412e3b"},"name":4,"images":[],"appearance":{"gender":"Female","glasses":"No","age":"45 - 54","ethnicity":"Caucasian"},"__v":0}
+{"_id":{"$oid":"582d793248f1f32a584147e8"},"name":5,"images":[],"appearance":{"gender":"Female","glasses":"No","age":"25 - 34","ethnicity":"Hispanic"},"__v":0}
+{"_id":{"$oid":"582d7ee148f1f32a58415c42"},"name":6,"images":[],"appearance":{"gender":"Female","glasses":"No","age":"18 - 24","ethnicity":"Caucasian"},"__v":0}
