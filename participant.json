@@ -11,3 +11,5 @@
 {"_id":{"$oid":"58319d2348f1f32a5841c70d"},"name":11,"images":[],"appearance":{"gender":"Female","glasses":"No","age":"18 - 24","ethnicity":"Hispanic"},"__v":0}
 {"_id":{"$oid":"5831fc6b48f1f32a5841d928"},"name":12,"images":[],"appearance":{"gender":"Male","glasses":"No","age":"45 - 54","ethnicity":"Caucasian"},"__v":0}
 {"_id":{"$oid":"58356a1948f1f32a5841ebf3"},"name":13,"images":[],"appearance":{"gender":"Female","glasses":"No","age":"25 - 34","ethnicity":"Caucasian"},"__v":0}
+{"_id":{"$oid":"58356d5248f1f32a5841faa8"},"name":14,"images":[],"appearance":{"gender":"Male","glasses":"No","age":"Under 18","ethnicity":"Hispanic"},"__v":0}
+{"_id":{"$oid":"583570a148f1f32a584209cb"},"name":15,"images":[],"appearance":{"gender":"Male","glasses":"No","age":"35 - 44","ethnicity":"Caucasian"},"__v":0}
